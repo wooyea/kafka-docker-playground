@@ -12,6 +12,8 @@ services:
     hostname: kdc.kerberos-demo.local
     build: ../../environment/kerberos/kdc
     container_name: kdc
+    ports:
+      - "9088:88"
     volumes:
       - secret:/var/lib/secret
       - ../../environment/kerberos/kdc/krb5.conf:/etc/kdc/krb5.conf
